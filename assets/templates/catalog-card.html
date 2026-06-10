@@ -1,0 +1,74 @@
+<!-- Ficha de Catálogo Horizontal Limpia -->
+<div class="catalog-card" id="catalog-card-{{PRODUCT_ID}}" data-sku="{{PRODUCT_SKU}}">
+    <!-- Contenedor Izquierdo: Ficha Técnica -->
+    <div class="catalog-card-details">
+        <div class="catalog-card-header">
+            <h3 class="catalog-card-title">
+                {{PRODUCT_NAME}}
+            </h3>
+            <div class="catalog-sku-container">
+                <span class="catalog-sku-label">Código SKU</span>
+                <span class="catalog-sku-badge">{{PRODUCT_SKU}}</span>
+            </div>
+            
+            <!-- Estrellas de Calificación (Opcional visual) -->
+            <div class="catalog-rating-stars">
+                {{RATING_STARS}}
+            </div>
+        </div>
+
+        <!-- Ficha Técnica -->
+        <div class="catalog-specs">
+            <div class="catalog-spec-item">
+                <i class="fa fa-tag"></i>
+                <span class="catalog-spec-label">Modelo:</span>
+                <span class="catalog-spec-value">{{PRODUCT_MODELO}}</span>
+            </div>
+            <div class="catalog-spec-item">
+                <i class="fa fa-certificate"></i>
+                <span class="catalog-spec-label">Marca:</span>
+                <span class="catalog-spec-value">{{PRODUCT_MARCA}}</span>
+            </div>
+            <div class="catalog-spec-item">
+                <i class="fa fa-venus-mars"></i>
+                <span class="catalog-spec-label">Género:</span>
+                <span class="catalog-spec-value">{{PRODUCT_GENERO}}</span>
+            </div>
+            <div class="catalog-spec-item">
+                <i class="fa fa-paint-brush"></i>
+                <span class="catalog-spec-label">Estilo:</span>
+                <span class="catalog-spec-value">{{PRODUCT_ESTILO}}</span>
+            </div>
+            <div class="catalog-spec-item">
+                <i class="fa fa-cube"></i>
+                <span class="catalog-spec-label">Material:</span>
+                <span class="catalog-spec-value">{{PRODUCT_MATERIAL}}</span>
+            </div>
+            <div class="catalog-spec-item">
+                <i class="fa fa-sun-o"></i>
+                <span class="catalog-spec-label">Temporada:</span>
+                <span class="catalog-spec-value">{{PRODUCT_TEMPORADA}}</span>
+            </div>
+            <div class="catalog-spec-item">
+                <i class="fa fa-arrows-alt"></i>
+                <span class="catalog-spec-label">Talles:</span>
+                <span class="catalog-spec-value">{{PRODUCT_TALLES}}</span>
+            </div>
+            <div class="catalog-spec-item align-items-start">
+                <i class="fa fa-tint mt-1"></i>
+                <span class="catalog-spec-label">Colores:</span>
+                <div class="catalog-colors-badges">
+                    {{PRODUCT_COLORES}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor Derecho: Imagen y Portada -->
+    <div class="catalog-card-gallery">
+        <div class="gallery-wrapper">
+            <img class="gallery-main-img" src="{{IMAGEN_URL}}" alt="{{PRODUCT_NAME}}">
+            <span class="gallery-sticker-portada" style="{{PORTADA_DISPLAY_STYLE}}">⭐ PORTADA</span>
+        </div>
+    </div>
+</div>
