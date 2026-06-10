@@ -172,7 +172,8 @@
     border: 1px solid var(--border-color);
 }
 
-.gallery-main-img {
+.gallery-main-img,
+.gallery-wrapper img {
     width: 100%;
     height: auto;
     max-height: 400px;
