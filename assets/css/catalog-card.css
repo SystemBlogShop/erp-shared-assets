@@ -1,0 +1,225 @@
+/* ==========================================================================
+   FICHA DE PRODUCTO: CATALOG CARD STYLES
+   REPLICADO DEL DISEÑO PREMIUM DE BLOGGER PARA USO EN ERP
+   ========================================================================== */
+
+:root {
+    --primary-cyan: #00f2ff;
+    --primary-cobalt: #002b5c;
+    --secondary-cobalt: #004085;
+    --accent-cobalt: #001a35;
+    --premium-shadow: 0 10px 30px rgba(0, 43, 92, 0.08);
+    --premium-shadow-hover: 0 15px 45px rgba(0, 43, 92, 0.15);
+    --premium-radius: 12px;
+    --outfit-font: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --light-blue-bg: #EFF6FC;
+    --border-color: #e2e8f0;
+    --text-color: #2d3748;
+    --text-muted-color: #64748b;
+}
+
+.catalog-card {
+    display: flex;
+    flex-direction: row;
+    background: #ffffff;
+    border-radius: var(--premium-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--premium-shadow);
+    overflow: hidden;
+    max-width: 800px;
+    margin: 15px auto;
+    font-family: var(--outfit-font);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-sizing: border-box;
+}
+
+.catalog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--premium-shadow-hover);
+}
+
+/* --- DETALLES (COL IZQUIERDA) --- */
+.catalog-card-details {
+    flex: 1 1 55%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.catalog-card-header {
+    margin-bottom: 16px;
+}
+
+.catalog-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--primary-cobalt);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.02em;
+}
+
+.catalog-sku-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.catalog-sku-label {
+    background: rgba(0, 43, 92, 0.05);
+    color: var(--primary-cobalt);
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid rgba(0, 43, 92, 0.1);
+    text-transform: uppercase;
+}
+
+.catalog-sku-badge {
+    background: #f1f5f9;
+    color: var(--text-muted-color);
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    border: 1px solid #e2e8f0;
+}
+
+.catalog-rating-stars {
+    display: flex;
+    gap: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.catalog-rating-stars i {
+    color: #f5a623;
+}
+
+/* --- ATRIBUTOS --- */
+.catalog-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.catalog-spec-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.catalog-spec-item i {
+    width: 18px;
+    text-align: center;
+    color: var(--secondary-cobalt);
+    opacity: 0.85;
+    font-size: 0.9rem;
+}
+
+.catalog-spec-label {
+    font-weight: 600;
+    color: #1a202c;
+    min-width: 90px;
+}
+
+.catalog-spec-value {
+    color: var(--text-color);
+}
+
+.catalog-colors-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.catalog-color-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Surtido o arcoiris */
+.catalog-color-surtido {
+    background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* --- GALERÍA (COL DERECHA) --- */
+.catalog-card-gallery {
+    flex: 1 1 45%;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+}
+
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+}
+
+.gallery-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-left: 1px solid var(--border-color);
+}
+
+.gallery-sticker-portada {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 215, 0, 0.95);
+    color: #000000;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 5px;
+    z-index: 5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    letter-spacing: 0.5px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 600px) {
+    .catalog-card {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    
+    .catalog-card-details {
+        order: 2;
+        padding: 18px;
+    }
+    
+    .catalog-card-gallery {
+        order: 1;
+        width: 100%;
+    }
+    
+    .gallery-wrapper {
+        min-height: 280px;
+        height: 280px;
+    }
+    
+    .gallery-main-img {
+        border-left: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
