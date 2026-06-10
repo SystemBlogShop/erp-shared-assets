@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Ficha de Producto - &lt;&lt;[CODIGO_ID]&gt;&gt;</title>
+    <title>Catálogo - &lt;&lt;[CATEGORIA_ID]&gt;&gt;</title>
     <!-- Outfit Font Import -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;display=swap">
     <!-- Estilos de Ficha de Catálogo (CDN) -->
@@ -10,68 +10,96 @@
 </head>
 <body>
 
-<div class="catalog-card">
-    <div class="catalog-card-details">
-        <div class="catalog-card-header">
-            <h1 class="catalog-card-title">
-                &lt;&lt;[CODIGO_ID]&gt;&gt;
-            </h1>
-            <div class="catalog-sku-container">
-                <span class="catalog-sku-label">Código SKU</span>
-                <span class="catalog-sku-badge">&lt;&lt;[SKU]&gt;&gt;</span>
+<div class="catalog-container">
+    <!-- Banner de Categoría -->
+    <div class="category-banner">
+        <div class="category-header-main">
+            <div class="category-icon-wrapper">
+                &lt;&lt;[ICONO_SVG]&gt;&gt;
             </div>
-            
-            <div class="catalog-rating-stars">
-                ⭐ ⭐ ⭐ ⭐ ⭐
+            <div class="category-title-section">
+                <span class="category-badge">&lt;&lt;[CATEGORIA_GENERAL]&gt;&gt;</span>
+                <h1 class="category-title">&lt;&lt;[CATEGORIA_ID]&gt;&gt;</h1>
             </div>
         </div>
-
-        <div class="catalog-specs">
-            <div class="catalog-spec-item">
-                <span class="catalog-spec-label">Modelo:</span>
-                <span class="catalog-spec-value">&lt;&lt;[MODELO]&gt;&gt;</span>
+        <div class="category-meta-grid">
+            <div class="category-meta-item">
+                <span class="meta-label">Marcas</span>
+                <span class="meta-value">&lt;&lt;[LISTADO_MARCAS]&gt;&gt;</span>
             </div>
-            <div class="catalog-spec-item">
-                <span class="catalog-spec-label">Marca:</span>
-                <span class="catalog-spec-value">&lt;&lt;[MARCA]&gt;&gt;</span>
-            </div>
-            <div class="catalog-spec-item">
-                <span class="catalog-spec-label">Género:</span>
-                <span class="catalog-spec-value">&lt;&lt;[GENERO]&gt;&gt;</span>
-            </div>
-            <div class="catalog-spec-item">
-                <span class="catalog-spec-label">Estilo:</span>
-                <span class="catalog-spec-value">&lt;&lt;[ESTILO]&gt;&gt;</span>
-            </div>
-            <div class="catalog-spec-item">
-                <span class="catalog-spec-label">Material:</span>
-                <span class="catalog-spec-value">&lt;&lt;[MATERIAL]&gt;&gt;</span>
-            </div>
-            <div class="catalog-spec-item">
-                <span class="catalog-spec-label">Temporada:</span>
-                <span class="catalog-spec-value">&lt;&lt;[TEMPORADA]&gt;&gt;</span>
-            </div>
-            <div class="catalog-spec-item">
-                <span class="catalog-spec-label">Talles:</span>
-                <span class="catalog-spec-value">&lt;&lt;[TALLES]&gt;&gt;</span>
-            </div>
-            <div class="catalog-spec-item">
-                <span class="catalog-spec-label">Colores:</span>
-                <span class="catalog-spec-value">&lt;&lt;[COLORES]&gt;&gt;</span>
+            <div class="category-meta-item">
+                <span class="meta-label">Talles / Medidas</span>
+                <span class="meta-value">&lt;&lt;[LISTADO_TALLES]&gt;&gt;</span>
             </div>
         </div>
     </div>
 
-    <div class="catalog-card-gallery">
-        <div class="gallery-wrapper">
-            &lt;&lt;If: NOT(ISBLANK(ANY(SELECT(BD_PRODUCTO_IMAGENES[URL], AND([PRODUCTO_ID] = [_THISROW].[CODIGO_ID], [PORTADA] = TRUE)))))&gt;&gt;
-                <img class="gallery-main-img" src="&lt;&lt;ANY(SELECT(BD_PRODUCTO_IMAGENES[URL], AND([PRODUCTO_ID] = [_THISROW].[CODIGO_ID], [PORTADA] = TRUE)))&gt;&gt;" alt="&lt;&lt;[CODIGO_ID]&gt;&gt;">
-                <span class="gallery-sticker-portada">⭐ PORTADA</span>
-            &lt;&lt;Else&gt;&gt;
-                <img class="gallery-main-img" src="&lt;&lt;ANY(SELECT(BD_PRODUCTO_IMAGENES[URL], [PRODUCTO_ID] = [_THISROW].[CODIGO_ID]))&gt;&gt;" alt="&lt;&lt;[CODIGO_ID]&gt;&gt;">
-            &lt;&lt;EndIf&gt;&gt;
+    <!-- Bucle de Productos Relacionados -->
+    &lt;&lt;Start: [Related BD_PRODUCTOSs]&gt;&gt;
+    <div class="catalog-card">
+        <div class="catalog-card-details">
+            <div class="catalog-card-header">
+                <h3 class="catalog-card-title">
+                    &lt;&lt;[CODIGO_ID]&gt;&gt;
+                </h3>
+                <div class="catalog-sku-container">
+                    <span class="catalog-sku-label">SKU</span>
+                    <span class="catalog-sku-badge">&lt;&lt;[SKU]&gt;&gt;</span>
+                </div>
+                
+                <div class="catalog-rating-stars">
+                    ⭐ ⭐ ⭐ ⭐ ⭐
+                </div>
+            </div>
+
+            <div class="catalog-specs">
+                <div class="catalog-spec-item">
+                    <span class="catalog-spec-label">Modelo:</span>
+                    <span class="catalog-spec-value">&lt;&lt;[MODELO]&gt;&gt;</span>
+                </div>
+                <div class="catalog-spec-item">
+                    <span class="catalog-spec-label">Marca:</span>
+                    <span class="catalog-spec-value">&lt;&lt;[MARCA]&gt;&gt;</span>
+                </div>
+                <div class="catalog-spec-item">
+                    <span class="catalog-spec-label">Género:</span>
+                    <span class="catalog-spec-value">&lt;&lt;[GENERO]&gt;&gt;</span>
+                </div>
+                <div class="catalog-spec-item">
+                    <span class="catalog-spec-label">Estilo:</span>
+                    <span class="catalog-spec-value">&lt;&lt;[ESTILO]&gt;&gt;</span>
+                </div>
+                <div class="catalog-spec-item">
+                    <span class="catalog-spec-label">Material:</span>
+                    <span class="catalog-spec-value">&lt;&lt;[MATERIAL]&gt;&gt;</span>
+                </div>
+                <div class="catalog-spec-item">
+                    <span class="catalog-spec-label">Temporada:</span>
+                    <span class="catalog-spec-value">&lt;&lt;[TEMPORADA]&gt;&gt;</span>
+                </div>
+                <div class="catalog-spec-item">
+                    <span class="catalog-spec-label">Talles:</span>
+                    <span class="catalog-spec-value">&lt;&lt;[TALLES]&gt;&gt;</span>
+                </div>
+                <div class="catalog-spec-item">
+                    <span class="catalog-spec-label">Colores:</span>
+                    <span class="catalog-spec-value">&lt;&lt;[COLORES]&gt;&gt;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog-card-gallery">
+            <div class="gallery-wrapper">
+                &lt;&lt;If: NOT(ISBLANK(ANY(SELECT([Related BD_PRODUCTO_IMAGENES_ACTIVASs][URL], [PORTADA] = TRUE))))&gt;&gt;
+                    <img class="gallery-main-img" src="&lt;&lt;ANY(SELECT([Related BD_PRODUCTO_IMAGENES_ACTIVASs][URL], [PORTADA] = TRUE))&gt;&gt;" alt="&lt;&lt;[CODIGO_ID]&gt;&gt;">
+                    <span class="gallery-sticker-portada">⭐ PORTADA</span>
+                &lt;&lt;Else&gt;&gt;
+                    <img class="gallery-main-img" src="&lt;&lt;ANY([Related BD_PRODUCTO_IMAGENES_ACTIVASs][URL])&gt;&gt;" alt="&lt;&lt;[CODIGO_ID]&gt;&gt;">
+                &lt;&lt;EndIf&gt;&gt;
+            </div>
         </div>
     </div>
+    &lt;&lt;End&gt;&gt;
 </div>
 
 </body>
