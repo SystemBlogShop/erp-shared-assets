@@ -90,12 +90,7 @@
 
         <div class="catalog-card-gallery">
             <div class="gallery-wrapper">
-                &lt;&lt;If: NOT(ISBLANK(ANY(SELECT([Related BD_PRODUCTO_IMAGENES_ACTIVASs][URL], [PORTADA] = TRUE))))&gt;&gt;
-                    <img class="gallery-main-img" src="&lt;&lt;ANY(SELECT([Related BD_PRODUCTO_IMAGENES_ACTIVASs][URL], [PORTADA] = TRUE))&gt;&gt;" alt="&lt;&lt;[CODIGO_ID]&gt;&gt;">
-                    <span class="gallery-sticker-portada">⭐ PORTADA</span>
-                &lt;&lt;Else&gt;&gt;
-                    <img class="gallery-main-img" src="&lt;&lt;ANY([Related BD_PRODUCTO_IMAGENES_ACTIVASs][URL])&gt;&gt;" alt="&lt;&lt;[CODIGO_ID]&gt;&gt;">
-                &lt;&lt;EndIf&gt;&gt;
+                &lt;&lt;[ETIQUETA_IMAGEN]&gt;&gt;
             </div>
         </div>
     </div>
